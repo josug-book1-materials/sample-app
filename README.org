@@ -9,7 +9,7 @@
 : #!/bin/bash
 : yum install -q -y git
 : cd /root
-: git https://github.com/josug-book1-materials/sample-app.git
+: git clone https://github.com/josug-book1-materials/sample-app.git
 : cd sample-app
 : git checkout -b v1.0 remotes/origin/v1.0
 : sh /root/sample-app/server-setup/install_web.sh
