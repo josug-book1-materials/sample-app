@@ -9,26 +9,26 @@
 : #!/bin/bash
 : yum install -q -y git
 : cd /root
-: git clone https://github.com/irixjp/openstack-sample-app.git
-: cd openstack-sample-app
+: git https://github.com/josug-book1-materials/sample-app.git
+: cd sample-app
 : git checkout -b v1.0 remotes/origin/v1.0
-: sh /root/openstack-sample-app/server-setup/install_web.sh
-: sh /root/openstack-sample-app/server-setup/install_rest.sh
-: sh /root/openstack-sample-app/server-setup/install_db.sh
-: sh /root/openstack-sample-app/server-setup/web.init.sh start
-: sh /root/openstack-sample-app/server-setup/rest.init.sh start
+: sh /root/sample-app/server-setup/install_web.sh
+: sh /root/sample-app/server-setup/install_rest.sh
+: sh /root/sample-app/server-setup/install_db.sh
+: sh /root/sample-app/server-setup/web.init.sh start
+: sh /root/sample-app/server-setup/rest.init.sh start
 
   後は Floating IPを割り当てて、ブラウザからアクセスするだけです。
 
   アプリを停止する場合は、
 
-: sh /root/openstack-sample-app/server-setup/web.init.sh stop
-: sh /root/openstack-sample-app/server-setup/rest.init.sh stop
+: sh /root/sample-app/server-setup/web.init.sh stop
+: sh /root/sample-app/server-setup/rest.init.sh stop
 
   再起動は以下で行えます。
 
-: sh /root/openstack-sample-app/server-setup/web.init.sh restart
-: sh /root/openstack-sample-app/server-setup/rest.init.sh restart
+: sh /root/sample-app/server-setup/web.init.sh restart
+: sh /root/sample-app/server-setup/rest.init.sh restart
 
 
 * 設定（詳細）
@@ -43,8 +43,8 @@
 : #!/bin/bash
 : yum install -q -y git
 : cd /root
-: git clone https://github.com/irixjp/openstack-sample-app.git
-: cd openstack-sample-app
+: git clone https://github.com/josug-book1-materials/sample-app.git
+: cd sample-app
 : git checkout -b v1.0 remotes/origin/v1.0
 
 
@@ -52,18 +52,18 @@
    各サーバで以下のスクリプトを実行します。
 
    - web server
-: sh /root/openstack-sample-app/server-setup/install_web.sh
+: sh /root/sample-app/server-setup/install_web.sh
 
    - rest server
-: sh /root/openstack-sample-app/server-setup/install_rest.sh
+: sh /root/sample-app/server-setup/install_rest.sh
 
    - db server
-: sh /root/openstack-sample-app/server-setup/install_db.sh
+: sh /root/sample-app/server-setup/install_db.sh
 
 
 ** アプリ設定
    endpoint.conf にDBサーバのIPアドレスと、ReSTサーバのIPアドレスを記述します。
-: /root/openstack-sample-app/endpoint.conf
+: /root/sample-app/endpoint.conf
 
 : [rest-server]
 : rest_host = 127.0.0.1 ← 実際のアドレスへ書き換え
@@ -77,10 +77,10 @@
 * 起動
 
 ** Webサーバ
-: sh /root/openstack-sample-app/server-setup/web.init.sh {start|stop|restart}
+: sh /root/sample-app/server-setup/web.init.sh {start|stop|restart}
 
 ** ReSTサーバ
-: sh /root/openstack-sample-app/server-setup/rest.init.sh {start|stop|restart}
+: sh /root/sample-app/server-setup/rest.init.sh {start|stop|restart}
 
 ** DBサーバ
    設定スクリプトの中で起動されるため、特に起動は必要ありません。
