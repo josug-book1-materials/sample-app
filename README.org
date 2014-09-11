@@ -3,6 +3,11 @@
   Web Server - Rest Server - MySQL の3階層システムのサンプルアプリになります。
   [[file:server-setup/SampleApp.png]]
 
+* 動作要件
+  - CentOS 6.4以上 (64bit)
+  - Python 2.6以上
+  - MySQL
+
 * All in One でとりあえず動かす
   nova boot 時(horizonからも可能)に以下をuserdataへ設定すると、All in One 環境ですぐに動かす事が可能です。
 
