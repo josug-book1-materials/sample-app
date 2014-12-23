@@ -9,7 +9,7 @@ logfile="rest.log"
 start () {
     echo -n $"Starting $prog"
 
-    daemon --user=root "cd $(dirname $0); cd ../; python $prog >> $logfile 2>&1 &"
+    daemon --user=root "$(dirname $0)/wrapper.sh ../$prog ../$logfile"
     retval=$?
     echo
     return $retval
